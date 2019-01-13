@@ -1,0 +1,64 @@
+#
+# DVORAK.mayu - dvorak layout on 109 layout for ‘‹Žg‚¢‚Ì—JŸT
+#
+# +---------------------------------------------------------------------------+
+# |”¼Šp|  ! |  " |  # |  $ |  % |  & |  ' |  ( |  ) |  ~ |  { |  } |  | |Back |
+# |‘SŠp| 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0  | [  | ]  | \  |Space|
+# +---------------------------------------------------------------------------+
+# |       |  * |  < |  > |    |    |    |    |    |    |    |  ? |  ` |       |
+# |  Tab  | :  | ,  | .  | P  | Y  | F  | G  | C  | R  | L  | /  | @  | Enter |
+# +---------------------------------------------------------------------      +
+# |  Caps  |    |    |    |    |    |    |    |    |    |    |  = |  ~ |      |
+# |  Lock  | A  | O  | E  | U  | I  | D  | H  | T  | N  | S  | -  | ^  |      |
+# +---------------------------------------------------------------------------+
+# |          |  + |    |    |    |    |    |    |    |    |    |  _ |         |
+# |  Shift   | ;  | Q  | J  | K  | X  | B  | M  | W  | V  | Z  | \  |  Shift  |
+# +---------------------------------------------------------------------------+
+
+define KBDDVORAKon109
+
+
+# ˆê’i–Ú
+def subst S-*_0				= $TILDE
+def subst *Minus			= *LeftSquareBracket
+def subst *CircumflexAccent		= *RightSquareBracket
+
+# “ñ’i–Ú
+def subst *Q				= *Colon
+def subst *W				= *Comma
+def subst *E				= *Period
+def subst *R				= *P
+def subst *T				= *Y
+def subst *Y				= *F
+def subst *U				= *G
+def subst *I				= *C
+def subst *O				= *R
+def subst *P				= *L
+def subst *Atmark			= *Slash
+def subst *LeftSquareBracket		= *Atmark
+
+# ŽO’i–Ú
+def subst *A				= *A
+def subst *S				= *O
+def subst *D				= *E
+def subst *F				= *U
+def subst *G				= *I
+def subst *H				= *D
+def subst *J				= *H
+def subst *K				= *T
+def subst *L				= *N
+def subst *Semicolon			= *S
+def subst *Colon			= *Minus
+def subst *RightSquareBracket		= *Caret
+
+# Žl’i–Ú
+def subst *Z				= *Semicolon
+def subst *X				= *Q
+def subst *C				= *J
+def subst *V				= *K
+def subst *B				= *X
+def subst *N				= *B
+def subst *M				= *M
+def subst *Comma			= *W
+def subst *Period			= *V
+def subst *Slash			= *Z

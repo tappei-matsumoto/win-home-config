@@ -1,0 +1,33 @@
+# ----------------------------------------------------------------
+#  OSqlEdit Kemap
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-C)
+keymap2 OSqlEditC-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-X)
+keymap2 OSqlEditC-X : GlobalC-X
+ key n          = C-n        # 新しいタブの作成
+ key k          = C-F4       # タブを閉じる
+ key C-n        = A-w Down Down Down Down Down Down Down Enter # タブに名前を付ける
+ key C-x        = F2         # 次のブックマーク
+ key C-Comma    = S-F2       # 前のタブ
+ key C-FullStop = F2         # 次のタブ
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (Help)
+keymap2 OSqlEdit-Help : Global
+
+# ----------------------------------------------------------------
+#  OSqlEdit Keymap
+keymap KeymapOSqlEdit : Global
+ key C-Comma    = C-S-F6       # 前のタブ
+ key C-FullStop = C-F6         # 次のタブ
+ key C-AtMark   = C-F2         # ブックマーク設定／解除
+ key C-x        = &Prefix(OSqlEditC-X)
+ key C-c        = &Prefix(OSqlEditC-C)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window OSqlEdit /osqledit\.exe/ : KeymapOSqlEdit # OSqlEdit

@@ -1,0 +1,25 @@
+# ----------------------------------------------------------------
+#  Keymap for InternetExplorer
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 IEC-C : GlobalC-C
+ key C-d = LAlt f w f                     # 新規ディレクトリ
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 IEC-X : GlobalC-X
+ key C-d = A-d                            # アドレスバーへ移動
+
+# ----------------------------------------------------------------
+#  Keymap for IE
+keymap KeymapIE : Global
+ key C-f = A-Right                        # 進む
+ key C-b = A-Left                         # 戻る
+ key C-u = LAlt v c                       # ソースの表示
+ key C-x = &Prefix(IEC-X)                 # 2ストロークC-X
+ key C-c = &Prefix(IEC-C)                 # 2ストロークC-C
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window ie /iexplorer\.exe/ : KeymapIE # IE Keymap

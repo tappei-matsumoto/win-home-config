@@ -1,0 +1,51 @@
+# ----------------------------------------------------------------
+#  keymap for MozillaFirefox
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 MozillaFirefoxC-C : GlobalC-C
+ key C-p = Esc C-p                # 印刷
+ key C-v = Esc LAlt f v           # 印刷プレビュー
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 MozillaFirefoxC-X : GlobalC-X
+ key C-t = Esc                    # 誤打しやすい....
+ key n   = C-t                    # 新しいタブ
+ key k   = C-w                    # タブの削除
+ key C-h = C-h                    # ヒストリーバートグル
+ key C-b = C-b                    # ブックマークトグル
+ key C-a = F6                     # アドレスバーへ移動
+ key C-s = C-k                    # 検索バーへ移動
+ key OpenBracket  = Home          # バッファの先頭へ
+ key CloseBracket = End           # バッファの終端へ
+
+# ----------------------------------------------------------------
+#  Multiple Stroke Help
+keymap2 MozillaFirefoxHelp : Global
+
+# ----------------------------------------------------------------
+#  keymap for MozillaFirebird
+keymap KeymapMozillaFirefox : Global
+ key C-t        = Esc             # 誤打しやすい....
+ key C-k        = Esc             # 誤打防止
+ key C-s        = F3              # 次の検索結果
+ key C-Comma    = C-S-Tab         # 前のタブ
+ key C-FullStop = C-Tab           # 次のタブ
+ key C-x        = &Prefix(MozillaFirefoxC-X)
+ key C-c        = &Prefix(MozillaFirefoxC-C)
+ key C-S-Slash  = &HelpMessage("キーマップ", \
+     " C-,     : 左のタブ \n" \
+     " C-.     : 右のタブ \n" \
+     " C-b k   : タブの削除 \n" \
+     " C-b n   : 新しいタブ \n" \
+     " ------------------------ \n" \
+     " C-b C-h : 履歴 \n" \
+     " C-b C-b : ブックマーク \n" \
+     " ------------------------ \n" \
+     " C-b C-a : アドレスバーへ移動 \n" \
+     )
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window MozillaFirefox /firefox\.exe/ : KeymapMozillaFirefox # Mozilla Firefox

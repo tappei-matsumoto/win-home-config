@@ -1,0 +1,92 @@
+# ----------------------------------------------------------------
+#  NetBeans6.1 Keymap
+# ----------------------------------------------------------------
+#  Dependence
+#   - Global    : defined Global.mayu
+#   - GlobalC-C : defined Global.mayu
+#   - GlobalC-X : defined Global.mayu
+
+# ----------------------------------------------------------------
+#  NetBeansデバッグモード(DebugMode)
+keymap NetBeansDebugMode : Global
+ key g   = Esc                                # デバッグモード終了
+ key C-g = Esc                                # デバッグモード終了
+ key n   = F7     &Prefix(NetBeansDebugMode)  # ステップイン
+ key o   = F8     &Prefix(NetBeansDebugMode)  # ステップオーバー
+ key s   = A-S-F7 &Prefix(NetBeansDebugMode)  # ステップアウト
+ key c   = F4     &Prefix(NetBeansDebugMode)  # カーソルまで実行
+ key q   = S-F5   &Prefix(NetBeansDebugMode)  # 終了
+ key m   = C-F5   &Prefix(NetBeansDebugMode)  # 継続
+
+# ----------------------------------------------------------------
+#  NetBeans用2ストローク(C-C)
+keymap2 NetBeansC-C : GlobalC-C
+ key d   = &HelpMessage("", "DebugMode") &Prefix(NetBeansDebugMode)  # デバッグモードへ移行
+ key C-a = S-F9         # すべてコンパイル
+ key C-c = F9           # コンパイル
+ key C-d = A-F5         # デバッガで実行
+ key C-r = F6           # 実行
+
+# ----------------------------------------------------------------
+#  NetBeans用2ストローク(C-X)
+keymap2 NetBeansC-X : GlobalC-X
+ key k            = C-F4      # カレントビューを閉じる
+ key OpenBracket  = C-Home    # ファイルの先頭へ
+ key CloseBracket = C-End     # ファイルの末尾へ
+ key C-b          = C-_2      # エクスプローラーウィンドウに移動
+ key C-d          = C-_5      # デバッグウィンドウに移動
+ key C-e          = C-_3      # エディタウィンドウに移動
+ key C-j          = A-o       # ソースを追っかける
+ key C-s          = C-S F9    # 保存してコンパイル
+ key C-x          = F2        # 次のブックマークへ
+ key C-Atmark     = C-S-F8    # ブレークポイント
+
+# ----------------------------------------------------------------
+#  NetBeans用2ストローク(help)
+keymap2 NetBensHelp
+ key _1 = &HelpMessage("ビュー", \
+     "C-X C-B : エクスプローラーウィンドウに移動\n" \
+     "C-X C-E : エディタウィンドウに移動\n" \
+     "C-X C-D : デバッグウィンドウに移動\n" \
+     "C-X K   : カレントビュー削除")
+ key _2 = &HelpMessage("マーキング・カーソル", \
+     "C-X C-J : ソースを追っかける" \
+     "C-@     : ブックマークトグル" \
+     "C-X C-X : 次のブックマークへ移動" \
+     "C-X C-X : 次のブックマークへ移動" \
+     "C-X C-@ : ブレークポイントトグル")
+ key _3 = &HelpMessage("コンパイル・実行・デバッグ", \
+     "C-C C-C : コンパイル\n" \
+     "C-C C-A : すべてコンパイル\n" \
+     "C-C C-R : 実行\n" \
+     "C-C C-D : デバッガで実行\n" \
+     "C-C D   : デバッグモードに移行")
+ key _4 = &HelpMessage("デバッグモード", \
+     "n   : ステップイン\n" \
+     "o   : ステップアウト\n" \
+     "s   : ステップオーバー\n" \
+     "c   : カーソルまで実行\n" \
+     "m   : 継続\n" \
+     "q   : 終了\n" \
+     "g   : デバッグモード終了\n" \
+     "C-G : デバッグモード終了")
+
+# ----------------------------------------------------------------
+#  NetBeans用キーマップ
+keymap KeymapNetBeans : Global
+ key C-Comma       = A-Left             # 前のタブ
+ key C-FullStop    = A-Right            # 次のタブ
+ key C-t           = C-BackSlash        # 補完
+ key C-Atmark      = C-F2               # ブックマーク
+ key C-x           = &Prefix(NetBeansC-X)
+ key C-c           = &Prefix(NetBeansC-C)
+ key C-S-Slash     = &HelpMessage("KeyMap", \
+     " 1 : ビュー\n" \
+     " 2 : マーキング・カーソル \n" \
+     " 3 : コンパイル・実行・デバッグ\n" \
+     " 4 : デバッグモード" \
+     ) &Prefix(NetBensHelp)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window NetBeans (/java\.exe/ && /NetBeans IDE/) : KeymapNetBeans # NetBenas

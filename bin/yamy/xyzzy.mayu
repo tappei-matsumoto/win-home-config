@@ -1,0 +1,17 @@
+# ----------------------------------------------------------------
+#  keymap for xyzzy
+# ----------------------------------------------------------------
+#  Eependence
+#   - Marking : defined Global.mayu
+
+# ----------------------------------------------------------------
+#  Keymap for xyzzy
+keymap keymapXyzzy : keymapMinimum
+ key C-S-p = &Default
+ key C-S-n = &Default
+ key C-S-b = &Default
+ key C-S-f = &Default
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Xyzzy /xyzzy\.exe/ : KeymapXyzzy # xyzzy

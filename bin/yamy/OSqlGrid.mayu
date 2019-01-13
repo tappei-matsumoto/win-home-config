@@ -1,0 +1,25 @@
+# ----------------------------------------------------------------
+#  OSqlGrid Kemap
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-C)
+keymap2 OSqlGridC-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-X)
+keymap2 OSqlGridC-X : GlobalC-X
+ key C-s        = A-f Down Enter   # •Û‘¶
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (Help)
+keymap2 OSqlGrid-Help : Global
+
+# ----------------------------------------------------------------
+#  OSqlEdit Keymap
+keymap KeymapOSqlGrid : Global
+ key C-x        = &Prefix(OSqlGridC-X)
+ key C-c        = &Prefix(OSqlGridC-C)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window OSqlGrid /osqlgrid\.exe/ : KeymapOSqlGrid # OSqlGrid

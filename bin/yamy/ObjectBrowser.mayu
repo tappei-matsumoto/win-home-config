@@ -1,0 +1,35 @@
+# ----------------------------------------------------------------
+#  Keymap for ObjectBrowser
+
+# ----------------------------------------------------------------
+#  依存関係
+#  reqire 
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 ObjectBrowserC-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 ObjectBrowserC-X : GlobalC-X
+ key k  = A-x
+
+# ----------------------------------------------------------------
+#  MultiStroke Help
+keymap2 ObjectBrowserHelp
+ key _1 = &HelpMessage("ウィンドウ", \
+     "")
+
+# ----------------------------------------------------------------
+#  Keymap for ObjectBrowser
+keymap KeymapObjectBrowser : Global
+ key C-Comma       = C-Tab              # 前のバッファ
+ key C-FullStop    = C-S-Tab            # 次のバッファ
+ key C-x           = &Prefix(ObjectBrowserC-X)
+ key C-c           = &Prefix(ObjectBrowserC-C)
+ key C-S-Slash     = &HelpMessage("KeyMap", \
+     ) &Prefix(ObjectBrowserHelp)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window ObjectBrowser   /OOB\.EXE/              : KeymapObjectBrowser     # Object Browser

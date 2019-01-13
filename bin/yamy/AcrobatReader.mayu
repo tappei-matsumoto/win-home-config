@@ -1,0 +1,18 @@
+# ----------------------------------------------------------------
+#  Keymap for AcrobatReader
+
+# ----------------------------------------------------------------
+#  Keymap for AcrobatReader
+keymap KeymapAcrobatReader : Global
+ key p   = Up          # 上
+ key n   = Down        # 下
+ key b   = Left        # 前のページ
+ key f   = Right       # 次のページ
+ key t   = F5          # ツリートグル
+ key w   = C-_2        # 幅を合わせる
+ key z   = C-Semicolon # 拡大
+ key S-z = C-Minus     # 縮小
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window AcrobatReader /AcroRd32\.exe/ : KeymapAcrobatReader # Acrobat Reader

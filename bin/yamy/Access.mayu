@@ -1,0 +1,22 @@
+# ----------------------------------------------------------------
+#  Keymap for MS-Access
+
+# ----------------------------------------------------------------
+#  2stroke C-C
+keymap2 AccessC-C : MS-OfficeC-C
+
+# ----------------------------------------------------------------
+#  2stroke C-X
+keymap2 AccessC-X : MS-OfficeC-X
+ key k            = C-F4               # MDI-Window�̍폜
+
+# ----------------------------------------------------------------
+#  Keymap for MS-Access
+keymap KeymapAccess : KeymapMS-Office
+ key C-c           = End
+ key C-x           = &Prefix(AccessC-X)
+ key C-c           = &Prefix(AccessC-C)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Access /MSACCESS\.EXE/ : KeymapAccess # MS Access

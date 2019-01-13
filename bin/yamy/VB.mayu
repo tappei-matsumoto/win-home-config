@@ -1,0 +1,92 @@
+# ----------------------------------------------------------------
+#  Keymap for VisualBasic
+
+# ----------------------------------------------------------------
+#  Dependence
+#  reqire MDI.mayu
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 VisualBasicC-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 VisualBasicC-X : GlobalC-X
+ key s            = lAlt f v           # プロジェクトを保存
+ key OpenBracket  = C-Home             # ファイルの先頭へ
+ key CloseBracket = C-End              # ファイルの末尾へ
+ key k            = C-F4               # MDI-Windowの削除
+ key _1           = C-g                # イミディエイトウィンドウオープン
+ key _2           = lAlt v h           # ウォッチウィンドウオープン
+ key _3           = F4                 # プロパティウィンドウオープン
+ key _4           = lAlt v x           # ツールボックス
+ key C-b          = C-r                # プロジェクトウィンドウオープン
+ key C-x          = lAlt e up right n  # 次のマーキング
+ key C-Comma      = lAlt e up right p  # 前のマーキング
+ key C-FullStop   = lAlt e up right n  # 次のマーキング
+ key C-j          = S-F2               # 定義行へジャンプ
+ key C-u          = C-S-F2             # 元の行へ戻る
+ key r            = F5                 # 実行
+ key C-r          = C-F5               # 完全コンパイルの後に実行
+ key C-n          = F8                 # ステップイン
+ key C-m          = S-F8               # ステップオーバー
+ key g            = C-F8               # カーソル行まで実行
+ key C-q          = lAlt r e           # 中断
+ key b            = F9                 # ブレークポイント設定／解除
+
+# ----------------------------------------------------------------
+#  2Stroke C-S-C
+keymap2 VisualBasicC-S-C : MDI-Window
+ key _2 = lAlt w h                # 上下に並べて表示
+ key _5 = lAlt w v                # 左右に並べて表示
+
+# ----------------------------------------------------------------
+#  Multiple Stroke Help
+keymap2 VisualBasicHelp
+ key _1 = &HelpMessage("ウィンドウ", \
+     "C-X 1   : イミディエイトウィンドウ\n" \
+     "C-X 2   : ウォッチウィンドウ\n" \
+     "C-X 3   : プロパティウィンドウ\n" \
+     "C-X 4   : ツールボックス\n" \
+     "C-X C-B : プロジェクトウィンドウ\n" \
+     "C-X ,   : 前のMDIウィンドウ\n" \
+     "C-X .   : 次のMDIウィンドウ\n" \
+     "C-X K   : MDIウィンドウの削除")
+ key _2 = &HelpMessage("マーキング・カーソル", \
+     "C-@     : ブックマークの設定・解除\n" \
+     "C-X C-X : 次のブックマークへ\n" \
+     "C-X C-, : 前のブックマークへ\n" \
+     "C-X C-. : 次のブックマークへ\n" \
+     "C-X C-J : 定義行へ移動\n" \
+     "C-X C-U : 元の行へ戻る")
+ key _3 = &HelpMessage("実行デバッグ", \
+     "C-X B   : ブレークポイントの設定・解除\n" \
+     "C-X R   : 実行\n" \
+     "C-X C-R : 完全コンパイル後に実行\n" \
+     "C-X C-N : ステップ実行\n" \
+     "C-X C-M : ステップ実行（関数内へ飛ばない）\n" \
+     "C-X G   : カーソル行まで実行\n" \
+     "C-X C-Q : 中断")
+
+# ----------------------------------------------------------------
+#  keymap for VisualBasic
+keymap KeymapVisualBasic : Global
+ key C-s           = C-f                # 検索
+ key C-Atmark      = lAlt e up right t  # マーキング
+ key C-S-BackSlash = lAlt e r           # やりなおし
+ key C-Comma       = C-Tab              # 前のタブ
+ key C-FullStop    = C-S-Tab            # 次のタブ
+ key C-t           = C-j                # dabbrev
+ key C-x           = &Prefix(VisualBasicC-X)
+ key C-c           = &Prefix(VisualBasicC-C)
+ key C-S-c         = &Prefix(VisualBasicC-S-C)
+ key C-S-Slash     = &HelpMessage("KeyMap", \
+     " 1 : ウィンドウ \n" \
+     " 2 : マーキング・カーソル \n" \
+     " 3 : 実行・デバッグ" \
+     ) &Prefix(VisualBasicHelp)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window VisualBasic /VB6\.EXE/ : KeymapVisualBasic # Visual Basic
+window ExcelMacro (/EXCEL\.EXE/ && /Microsoft Visual Basic/) : KeymapVisualBasic # Excel (VisualBasic)

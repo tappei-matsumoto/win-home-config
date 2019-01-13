@@ -1,0 +1,37 @@
+# ----------------------------------------------------------------
+#  Keymap for Tablacus
+
+# ----------------------------------------------------------------
+#  Require
+#    (none)
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 Tablacus-C : GlobalC-C
+ key C-d = LAlt f w f                 # 新規ディレクトリ
+ key C-s = &Prefix(MDIEC-C-C-S)       # 2ストロークC-S
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 Tablacus-X : GlobalC-X
+ key C-a = $noah                          # noah
+ key C-x = $xyzzy_add                     # xyzzy (Add)
+ key C-n = $xyzzy_new                     # xyzzy (new)
+ key n   = C-t                            # New Tab
+ key k   = C-w                            # Kill Tab
+
+# ----------------------------------------------------------------
+#  Keymap for Explorer
+keymap KeymapTablacus : Global
+# Key C-d         = S-Delete               # 削除（ゴミ箱不要）
+ key C-r         = F5                     # reload
+ key C-k         = Esc                    # 操作ミスで削除してしまわないように
+ key C-BackSlash = Esc                    # 間違えて押すとえらいことになるからキライ
+ key C-A-h       = &ShellExecute("open", "C:\\Users\\999000_102192\\bin\\TE\\TE64.exe", "\"C:\\users\\999000_102192\"", "\"C:\\users\\999000_102192\"", ShowNormal) # ホームディレクトリを開く
+ key C-A-c       = &ShellExecute("open", "C:\\Users\\999000_102192\\bin\\TE\\TE64.exe", "\"C:\\users\\999000_102192\\work\"", "\"C:\\users\\999000_102192\\work\"", ShowNormal) # Workディレクトリを開く
+ key C-x = &Prefix(Tablacus-X)            # 2ストロークC-X
+ key C-c = &Prefix(Tablacus-C)            # 2ストロークC-C
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Tablacus /TE64\.exe/ : KeymapTablacus # Tablacus

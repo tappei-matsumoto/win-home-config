@@ -1,0 +1,40 @@
+# ----------------------------------------------------------------
+#  Keymap for PPcw
+
+# ----------------------------------------------------------------
+#  Require
+#    (none)
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 PPCW-C : GlobalC-C
+ key C-d = LAlt f w f                 # 新規ディレクトリ
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 PPCW-X : GlobalC-X
+# key C-a = $noah                          # noah
+# key C-x = $xyzzy_add                     # xyzzy (Add)
+# key C-n = $xyzzy_new                     # xyzzy (new)
+# key k   = A-w t c                        # Kill Tab
+ key n   = F11                            # New Tab
+# key c   = A-f n f                        # Clone Tab
+
+# ----------------------------------------------------------------
+#  Keymap for Explorer
+keymap KeymapPPCW : Global
+ Key C-a         = C-PageUp               # 先頭項目へ
+ Key C-e         = C-PageDown             # 末端項目へ
+ key C-Comma     = S-Tab                  # 前のタブ
+ key C-FullStop  = Tab                    # 次のタブ
+ key C-r         = C-l                    # reload
+# key C-k         = Esc                    # 操作ミスで削除してしまわないように
+# key C-BackSlash = Esc                    # 間違えて押すとえらいことになるからキライ
+# key C-A-h       = &ShellExecute("open", "C:\\users\\999000_102192\\bin\\mdie\\MDIE.exe", "\"C:\\users\\999000_102192\"", "\"C:\\users\\999000_102192\"", ShowNormal) # ホームディレクトリを開く
+# key C-A-c       = &ShellExecute("open", "C:\\users\\999000_102192\\bin\\mdie\\MDIE.exe", "\"C:\\users\\999000_102192\\work\"", "\"C:\\users\\999000_102192\\work\"", ShowNormal) # Workディレクトリを開く
+ key C-x = &Prefix(PPCW-X)                # 2ストロークC-X
+# key C-c = &Prefix(MDIEC-C)               # 2ストロークC-C
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window PPCW /PPCW\.EXE/ : KeymapPPCW      # PPCW

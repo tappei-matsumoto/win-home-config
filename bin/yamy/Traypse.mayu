@@ -1,0 +1,13 @@
+# ----------------------------------------------------------------
+#  Keymap for Traypse
+keymap KeymapTraypse : Global
+ key C-l = A-l  # 左クリック
+ key C-r = A-r  # 右クリック
+ key C-d = A-d  # 左ダブルクリック
+ key C-b = A-b  # 右ダブルクリック
+ key C-z = A-x  # 最大化
+ key C-i = A-n  # 最小化
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window traypse /traypse\.exe/ : KeymapTraypse # Traypse Keymap

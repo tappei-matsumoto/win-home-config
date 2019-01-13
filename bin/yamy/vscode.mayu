@@ -1,0 +1,38 @@
+# ----------------------------------------------------------------
+#  VSCode Kemap
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-C C-E)
+keymap2 VScodeCCCE : GlobalC-C
+ key e  = C-S-e                      # エクスプローラー
+ key s  = C-S-s                      # 検索
+ key g  = C-S-g                      # SCM
+ key d  = C-S-d                      # デバッグ
+ key x  = C-S-x                      # 拡張機能
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-C)
+keymap2 VScodeC-C : GlobalC-C
+ key C-e = &Prefix(VScodeCCCE)       # 2ストロークC-E
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-X)
+keymap2 VSCodeC-X : GlobalC-X
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (Help)
+keymap2 VSCode-Help : Global
+
+# ----------------------------------------------------------------
+#  VSCode Keymap
+keymap KeymapVSCode : Global
+ Key M-x        = C-S-p              # コマンドパレット
+ key C-x        = &Prefix(VSCodeC-X)
+ key C-c        = &Prefix(VSCodeC-C)
+ key C-S-Slash  = &HelpMessage("KeyMap", \
+     " C-C C-E : サイドバー \n" \
+     ) &Prefix(VSCode-Help)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window VSCode /Code\.exe/ : KeymapVSCode # VSCode

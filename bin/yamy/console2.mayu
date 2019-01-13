@@ -1,0 +1,23 @@
+# ----------------------------------------------------------------
+#  Keymap for Console2
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 Console2-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 Console2-X : GlobalC-X
+ key n   = C-F2                   # 新しいタブ
+ key k   = C-W                    # タブを閉じる
+
+# ----------------------------------------------------------------
+#  Keymap for Console2
+keymap KeymapConsole2 : Global
+ key C-Comma    = C-S-Tab         # 前のタブ
+ key C-FullStop = C-Tab           # 次のタブ
+ key C-x        = &Prefix(Console2-X)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Console2 /Console\.exe/ : KeymapConsole2 # Console2

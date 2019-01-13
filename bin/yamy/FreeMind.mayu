@@ -1,0 +1,19 @@
+# ----------------------------------------------------------------
+#  Keymap for FreeMind
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 FreeMind-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 FreeMind-X : GlobalC-X
+
+# ----------------------------------------------------------------
+#  Keymap for FreeMind
+keymap KeymapFreeMind : Global
+ key C-i     = Insert                     # êVãKÉmÅ[Éhí«â¡
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window FreeMind (/javaw\.exe/ && /FreeMind/) : KeymapFreeMind # FreeMind

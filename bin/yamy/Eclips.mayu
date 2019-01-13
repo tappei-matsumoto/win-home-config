@@ -1,0 +1,52 @@
+# ----------------------------------------------------------------
+#  Eclips Keymap
+# ----------------------------------------------------------------
+#  Eependence
+#   - GlobalC-C     : defined Global.mayu
+#   - GlobalC-X     : defined Global.mayu
+#   - keymapMinimum : defined Global.mayu
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 EclipsC-C : GlobalC-C
+ key C-d          = F11                  # デバッグ
+ key C-r          = C-F11                # 実行
+ key C-e          = A-r e Return         # 外部コマンド実行
+ key C-h          = A-r t                # 実行（履歴）
+ key r            = A-r n                # 実行（ダイアログ）
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 EclipsC-X : GlobalC-X
+ key k            = C-F4           # MDI-Windowの削除
+ key b            = C-S-b          # ブレークポイントトグル
+ key j            = F3             # 定義へ移動
+ key C-e          = F12            # エディターへ移動
+ key C-b          = A-n w Return   # ツリー表示
+ key C-x          = C-_0           # 前のマーキング
+ key C-h          = C-h            # 高度な検索
+
+# ----------------------------------------------------------------
+#  Eclips Keymap
+keymap KeymapEclips : Global
+ key C-t           = C-Space       # 補完
+ key C-Comma       = C-PageUp      # 前のバッファ
+ key C-FullStop    = C-PageDown    # 次のバッファ
+ key A-Comma       = C-S-F7        # 前のビュー
+ key A-FullStop    = C-F7          # 次のビュー
+ key A-g           = C-l           # 指定行へ移動
+ key C-Atmark      = C-S-_0        # マーキング0 (Quickmarks Plugin)
+ key IC-C-m        = Return        # 変換中にC-mが効かないので・・・
+ key C-x           = &Prefix(EclipsC-X)
+ key C-c           = &Prefix(EclipsC-C)
+ key C-S-Slash     = &HelpMessage("キー操作", \
+     "C-c C-r : 実行\n" \
+     "C-c C-d : デバッグ\n" \
+     "C-c C-h : 実行（履歴）\n" \
+     "C-c r   : 実行（ダイアログ）\n" \
+     )
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Eclipse /eclipse\.exe:SWT_Window0/: KeymapEclips # Eclipse
+window EclipseIndigo /javaw\.exe:SWT_Window0/: KeymapEclips # Eclipse

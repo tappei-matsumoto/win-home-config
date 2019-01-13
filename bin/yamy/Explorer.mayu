@@ -1,0 +1,42 @@
+# ----------------------------------------------------------------
+#  Keymap for Explorer
+
+# ----------------------------------------------------------------
+#  SendTo
+keyseq $noah       = Applications N &Variable(0,0) &Repeat((Down),0) Enter  # noah
+keyseq $xyzzy_add  = Applications N &Variable(0,1) &Repeat((Down),1) Enter  # xyzzy (Add)
+keyseq $xyzzy_new  = Applications N &Variable(0,2) &Repeat((Down),2) Enter  # xyzzy (New)
+
+# ----------------------------------------------------------------
+#  Multiple Stroke C-C C-S
+keymap2 ExplorerC-C-C-S : Global
+ key C-n = LAlt v i n                     # 名前でソート
+ key C-t = LAlt v i t                     # 種類でソート
+ key C-z = LAlt v i z                     # サイズでソート
+ key C-d = LAlt v i d                     # 日付でソート
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 ExplorerC-C : GlobalC-C
+ key C-d = LAlt f w f                     # 新規ディレクトリ
+ key C-s = &Prefix(ExplorerC-C-C-S)       # 2ストロークC-X
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 ExplorerC-X : GlobalC-X
+ key C-a = $noah                          # noah
+ key C-x = $xyzzy_add                     # xyzzy (Add)
+ key C-n = $xyzzy_new                     # xyzzy (new)
+
+# ----------------------------------------------------------------
+#  Keymap for Explorer
+keymap KeymapExplorer : Global
+ key C-k = Esc                            # 操作ミスで削除してしまわないように
+ key C-t = LAlt Right Right Down e o      # ディレクトリツリートグル
+ key C-BackSlash = Esc                    # 間違えて押すとえらいことになるからキライ
+ key C-x = &Prefix(ExplorerC-X)           # 2ストロークC-X
+ key C-c = &Prefix(ExplorerC-C)           # 2ストロークC-C
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Explorer /Explorer\.EXE/ : KeymapExplorer # Exproler

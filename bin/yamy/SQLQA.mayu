@@ -1,0 +1,25 @@
+# ----------------------------------------------------------------
+#  SQL Query Analyzer Kemap
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-C)
+keymap2 SQLQA-CC : GlobalC-C
+ key C-r    = F5       # é¿çs
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-X)
+keymap2 SQLQA-CX : GlobalC-X
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (Help)
+keymap2 SQLQA-Help : Global
+
+# ----------------------------------------------------------------
+#  OSqlEdit Keymap
+keymap SQLQA : Global
+ key C-c        = &Prefix(SQLQA-CC)
+ key C-x        = &Prefix(SQLQA-CX)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window SQLQA-W /isqlw\.exe/ : SQLQA

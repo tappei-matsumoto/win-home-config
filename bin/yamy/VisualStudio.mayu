@@ -1,0 +1,48 @@
+# ----------------------------------------------------------------
+#  keymap for Visual Studio 2005 Express Edition
+
+# ----------------------------------------------------------------
+#  Depends
+
+# ----------------------------------------------------------------
+#  Visual C# 2strok C-C
+keymap2 VS2005C-C : GlobalC-C
+ key C-c = C-S-B    # コンパイル（ソリューションのビルド）
+ key C-r = C-F5     # 実行
+ key C-d = F5       # デバッグ実行
+ key C-u = C-R C-t  # 単体テスト
+
+# ----------------------------------------------------------------
+#  Visual C# 2strok C-X
+keymap2 VS2005C-X : GlobalC-X
+ key C-x          = C-B C-N        # 次のマーキング
+ key C-Comma      = C-B C-P        # 前のマーキング
+ key C-FullStop   = C-B C-N        # 次のマーキング
+ key C-b          = C-A-L          # 一覧（ソリューションエクスプローラー）
+ key b            = F9             # ブレークポイントトグル
+ key k            = LAlt f c       # MDI-Windowの削除
+ key C-S-Semicolon = C-m m         # 展開/折りたたみ
+ key C-HyphenMinus = C-m m         # 展開/折りたたみ
+
+# ----------------------------------------------------------------
+#  Visual C#
+keymap keymapVS2005 : Global
+ key C-AtMark      = C-B T         # ブックマーク設定／解除
+ key C-t           = C-Space       # 補完
+ key C-Comma       = C-S-Tab       # 前のタブ
+ key C-FullStop    = C-Tab         # 次のタブ
+ Key C-Slash       = C-E C         # 選択行をコメントアウト
+ Key C-Minus       = C-E U         # 選択行のコメント解除
+ Key A-Comma       = A-S-F6        # 前のウィンドウ
+ key A-FullStop    = A-F6          # 次のウィンドウ
+ key C-x           = &Prefix(VS2005C-X)
+ key C-c           = &Prefix(VS2005C-C)
+ key C-S-Slash     = &HelpMessage("KeyMap", \
+     " 1 : ウィンドウ \n" \
+     " 2 : マーキング・カーソル \n" \
+     " 3 : 実行・デバッグ" \
+     )
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window VS2005 /devenv.exe/ : keymapVS2005

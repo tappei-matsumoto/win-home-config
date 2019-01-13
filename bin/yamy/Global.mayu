@@ -1,0 +1,220 @@
+# ----------------------------------------------------------------
+#  Keymap for Global
+# ----------------------------------------------------------------
+#  このファイルで定義されているキーマップ
+#   keymapDefault : 何もしないキーマップ
+#   keymapMinimum : ウィンドウ操作と必要最低限のキーマップ
+#   Glabal        : グローバルキーマップ
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 GlobalC-C : Global
+ key C-p = LAlt f p                  # 印刷
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 GlobalC-X : Global
+ key C-c = $WindowClose              # 終了
+ key C-f = C-o                       # ファイルを開く
+ key C-s = C-s                       # 上書き保存
+ key C-w = LAlt f a                  # 名前を付けて保存
+ key OpenBracket  = C-Home           # 先頭へ
+ key CloseBracket = C-End            # 末尾へ
+
+# ----------------------------------------------------------------
+#  Multi Stroke Marking
+keymap2 Marking : Global
+ key C-p = S-Up       &Prefix(Marking)  # 上に移動
+ key C-n = S-Down     &Prefix(Marking)  # 下に移動
+ key C-b = S-Left     &Prefix(Marking)  # 左に移動
+ key C-f = S-Right    &Prefix(Marking)  # 右に移動
+ key M-f = S-C-Right  &Prefix(Marking)  # 次の単語
+ key M-b = A-C-Left   &Prefix(Marking)  # 前の単語
+ key C-a = S-Home     &Prefix(Marking)  # 行頭に移動
+ key C-e = S-End      &Prefix(Marking)  # 行末に移動
+ key C-v = S-PageDown &Prefix(Marking)  # 次のページ
+ key M-v = S-PageUp   &Prefix(Marking)  # 前のページ
+ key C-g = Left Right                   # マーキング解除
+ key C-c = &Prefix(GlobalC-C)
+ key C-x = &Prefix(GlobalC-X)
+
+# ----------------------------------------------------------------
+#  Multi Stroke Window Operation Mode
+keymap2 WindowOperation : Global
+ key C-p = &WindowMove(0, -16)    &Prefix(WindowOperation)  # ウィンドウを上に移動
+ key C-f = &WindowMove(16, 0)     &Prefix(WindowOperation)  # ウィンドウを右に移動
+ key C-b = &WindowMove(-16, 0)    &Prefix(WindowOperation)  # ウィンドウを左に移動
+ key C-n = &WindowMove(0, 16)     &Prefix(WindowOperation)  # ウインドウを下に移動
+ key C-a = &WindowClingToLeft     &Prefix(WindowOperation)  # ウィンドウを左に寄せる
+ key C-e = &WindowClingToRight    &Prefix(WindowOperation)  # ウィンドウを右に寄せる
+ key C-t = &WindowClingToTop      &Prefix(WindowOperation)  # ウィンドウを上に寄せる
+ key C-v = &WindowClingToBottom   &Prefix(WindowOperation)  # ウィンドウを下に寄せる
+ key C-d = &WindowMoveVisibly     &Prefix(WindowOperation)  # ウィンドウを見える位置へ移動
+ key C-z = &WindowMaximize                                  # ウィンドウの最大化
+ key C-i = &WindowMinimize                                  # ウィンドウの最小化
+ key C-k = $WindowClose                                     # ウィンドウを閉じる
+ key C-g = Esc                                              # Esc
+
+# ----------------------------------------------------------------
+#  MDIウィンドウ操作
+keymap2 MDI-Window
+ key C-S-p = &WindowMove(0, -16, MDI)   # ウィンドウを上に移動
+ key C-S-f = &WindowMove(16, 0, MDI)    # ウィンドウを右に移動
+ key C-S-b = &WindowMove(-16, 0, MDI)   # ウィンドウを左に移動
+ key C-S-n = &WindowMove(0, 16, MDI)    # ウインドウを下に移動
+ key C-S-a = &WindowClingToLeft(MDI)    # ウィンドウを左に寄せる
+ key C-S-e = &WindowClingToRight(MDI)   # ウィンドウを右に寄せる
+ key C-S-t = &WindowClingToTop(MDI)     # ウィンドウを上に寄せる
+ key C-S-v = &WindowClingToBottom(MDI)  # ウィンドウを下に寄せる
+ key C-S-d = &WindowMoveVisibly(MDI)    # ウィンドウを見える位置へ移動
+ key C-S-z = &WindowMaximize(MDI)       # ウィンドウの最大化
+ key C-S-i = &WindowMinimize(MDI)       # ウィンドウの最小化
+ key C-S-k = C-F4                       # ウィンドウを閉じる
+
+# ----------------------------------------------------------------
+#  何もしないキーマップ
+keymap KeymapDefault = &Default
+
+# ----------------------------------------------------------------
+#  ウィンドウ操作と最低限のキー変換
+keymap keymapMinimum : keymapDefault
+
+ # ----------------------------------------------------------------
+ #  キー変換
+# mod Control   += 英数            # 英数を Control に
+# key *英数      = *LControl       #
+ mod Alt       += 無変換          # 無変換をAltに
+ key *無変換    = *LAlt           #
+# mod Alt       += 変換            # 変換をAltに
+# key *変換      = *LAlt           #
+ key 変換       = Space           # 変換をスペースに
+ mod Alt       += ひらがな        # ひらがなをAltに
+ key *ひらがな  = *LAlt           #
+ key S-Space    = 半角/全角       # IME切り替え
+
+
+ # ----------------------------------------------------------------
+ key C-S-a   = &MouseMove(-2000, 0)     # マウス左端へ
+ key C-S-e   = &MouseMove(2000, 0)      # マウス右端へ
+ key C-S-b   = &MouseMove(-16, 0)       # マウス左へ
+ key C-S-f   = &MouseMove(16, 0)        # マウス右へ
+ key C-S-p   = &MouseMove(0, -16)       # マウス上へ
+ key C-S-n   = &MouseMove(0, 16)        # マウス下へ
+ key C-S-v   = &MouseWheel(-120)        # ホイール
+# key C-S-t   = &MouseWheel(120)         # ホイール
+ key C-S-j   = &VK(LButton)             # 左クリック
+ key C-S-o   = &VK(RButton)             # 右クリック
+# key C-S-z   = &MouseMove(2000,2000)    # マウスカーソルを見えないところへ
+ key C-S-g   = Esc                      # Esc(C-g)の気分で連打することがあるから...
+ key C-S-z   = &WindowMaximize          # ウィンドウの最大化
+ key C-S-i   = &WindowMinimize          # ウィンドウの最小化
+ key C-S-k   = &WindowClose             # ウィンドウの削除
+ key C-S-w   = &Prefix(WindowOperation) # ウィンドウ操作系モードへ
+ key C-S-Comma    = $PreviousWindow     # 前のウィンドウ
+ key C-S-FullStop = $NextWindow         # 次のウィンドウ
+
+ # ----------------------------------------------------------------
+ #  Windowsのネィティブ操作系
+ key W-s = W-f                        # 検索
+ key W-e = W-e                        # エクスプローラー
+ key W-x = W-r                        # ファイル名を指定して実行
+ key W-l = Esc                        # かってにログオフするな
+
+ # ----------------------------------------------------------------
+ #  その他
+ key C-S-x = W-r                      # ファイル名を指定して実行
+
+# ----------------------------------------------------------------
+#  グローバルキーマップ
+keymap Global
+
+ # ----------------------------------------------------------------
+ #  移動系
+ key C-p = Up                      # 上に移動
+ key C-n = Down                    # 下に移動
+ key C-b = Left                    # 左に移動
+ key C-f = Right                   # 右に移動
+ key M-f = C-Right                 # 次の単語
+ key M-b = C-Left                  # 前の単語
+ key C-a = Home                    # 行頭に移動
+ key C-e = End                     # 行末に移動
+ key C-v = PageDown                # 次のページ
+ key M-v = PageUp                  # 前のページ
+ key C-l = &Recenter               # カーソル行をページの中心にする
+ key C-Comma    = C-PageUp         # 前のバッファ（タブ）
+ key C-FullStop = C-PageDown       # 次のバッファ（タブ）
+
+ # ----------------------------------------------------------------
+ #  編集系
+ key C-i = Tab                     # タブ
+ key A-i = S-Tab                   # シフト＋タブ
+ key C-m = Enter                   # enter
+ key C-w = C-x                     # 切り取り
+ key M-w = C-c                     # コピー
+ key C-y = C-v                     # 貼り付け
+ key C-k = $EmacsEdit/kill-line    # キルライン
+ key C-d = Delete                  # 削除
+ key C-h = BackSpace               # バックスペース
+ key M-d = C-S-Right C-x           # 単語削除
+ key M-h = C-S-Left C-x            # 前の単語削除
+ key C-BackSlash   = C-z           # 元に戻す
+ key C-S-BackSlash = C-y           # やり直し
+ key M-m = M-Down               # ドロップダウン展開
+
+ # ----------------------------------------------------------------
+ # 検索系
+ key C-S = C-f                     # 検索
+
+ # ----------------------------------------------------------------
+ #  キー変換
+# mod Control   += 英数            # 英数を Control に
+# key *英数      = *LControl       #
+ mod Alt       += 無変換          # 無変換をAltに
+ key *無変換    = *LAlt           #
+# mod Alt       += 変換            # 変換をAltに
+# key *変換      = *LAlt           #
+ key 変換       = Space           # 変換をスペースに
+ mod Alt       += ひらがな        # ひらがなをAltに
+ key *ひらがな  = *LAlt           #
+ key S-Space    = 半角/全角       # IME切り替え
+
+ # ----------------------------------------------------------------
+ # その他
+ key C-g        = Esc                     # エスケープ
+ key C-c        = &Prefix(GlobalC-C)      # 2ストロークC-C
+ key C-x        = &Prefix(GlobalC-X)      # 2ストロークC-X
+ key C-q        = &Prefix(KeymapDefault)  # mayuに影響されないキー入力
+ key C-S-x      = W-r                     # ファイル名を指定して実行
+ key C-Space    = &Prefix(Marking)        # マーキング
+ key F1         = Esc                     # F1で開くヘルプが鬱陶しいのでEscを割り当てる
+ key C-j        = F2                      # 編集モードに移行する（ExplorerやExcelで便利）
+ key C-o        = Applications            # アプリケーションキー
+ mod win        = !!LWin                  # Winキーをワンショットモディファイアにする
+
+ # ----------------------------------------------------------------
+ #  マウスとかウィンドウとか
+ key C-S-a   = &MouseMove(-2000, 0)     # マウス左端へ
+ key C-S-e   = &MouseMove(2000, 0)      # マウス右端へ
+ key C-S-b   = &MouseMove(-16, 0)       # マウス左へ
+ key C-S-f   = &MouseMove(16, 0)        # マウス右へ
+ key C-S-p   = &MouseMove(0, -16)       # マウス上へ
+ key C-S-n   = &MouseMove(0, 16)        # マウス下へ
+ key C-S-v   = &MouseWheel(-120)        # ホイール
+# key C-S-t   = &MouseWheel(120)         # ホイール
+ key C-S-j   = &VK(LButton)             # 左クリック
+ key C-S-o   = &VK(RButton)             # 右クリック
+# key C-S-z   = &MouseMove(2000,2000)    # マウスカーソルを見えないところへ
+ key C-S-g   = Esc                      # Esc(C-g)の気分で連打することがあるから...
+ key C-S-z   = &WindowMaximize          # ウィンドウの最大化
+ key C-S-i   = &WindowMinimize          # ウィンドウの最小化
+ key C-S-k   = &WindowClose             # ウィンドウの削除
+ key C-S-w   = &Prefix(WindowOperation) # ウィンドウ操作系モードへ
+ key C-S-Comma    = $PreviousWindow     # 前のウィンドウ
+ key C-S-FullStop = $NextWindow         # 次のウィンドウ
+
+ # ----------------------------------------------------------------
+ #  Windowsのネィティブ操作系
+ key W-s = W-f                        # 検索
+ key W-e = W-e                        # エクスプローラー
+ key W-x = W-r                        # ファイル名を指定して実行
+ key W-l = Esc                        # かってにログオフするな

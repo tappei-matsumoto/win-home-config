@@ -1,0 +1,26 @@
+# ----------------------------------------------------------------
+#  MS-Office Keymap
+# ----------------------------------------------------------------
+#  Eependence
+#   - Global    : defined Global.mayu
+#   - GlobalC-C : defined Global.mayu
+#   - GlobalC-X : defined Global.mayu
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-C)
+keymap2 MS-OfficeC-C : GlobalC-C
+ key C-v = LAlt f v               # 印刷プレビュー
+
+# ----------------------------------------------------------------
+#  2 Stroke Keymap (C-X)
+keymap2 MS-OfficeC-X : GlobalC-X
+ key OpenBracket  = C-HOME        # 先頭へ
+ key CloseBracket = C-END         # 最後へ
+
+# ----------------------------------------------------------------
+#  MS-Office Keymap
+keymap KeymapMS-Office : Global
+ key C-Comma    = C-PageUp        # 前のページへ
+ key C-FullStop = C-PageDown      # 次のページへ
+ key C-c        = &Prefix(MS-OfficeC-C)
+ key C-x        = &Prefix(MS-OfficeC-X)

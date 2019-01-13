@@ -1,0 +1,48 @@
+# ----------------------------------------------------------------
+#  Keymap for MDIE
+
+# ----------------------------------------------------------------
+#  Require
+#    Explorer.mayu
+
+# ----------------------------------------------------------------
+#  Multiple Stroke C-C C-S
+keymap2 MDIEC-C-C-S : Global
+ key C-n = LAlt v i n                     # 名前でソート
+ key C-t = LAlt v i t                     # 種類でソート
+ key C-z = LAlt v i z                     # サイズでソート
+ key C-d = LAlt v i d                     # 日付でソート
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 MDIEC-C : GlobalC-C
+ key C-d = LAlt f w f                 # 新規ディレクトリ
+ key C-s = &Prefix(MDIEC-C-C-S)       # 2ストロークC-S
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 MDIEC-X : GlobalC-X
+ key C-a = $noah                          # noah
+ key C-x = $xyzzy_add                     # xyzzy (Add)
+ key C-n = $xyzzy_new                     # xyzzy (new)
+ key k   = A-w t c                        # Kill Tab
+ key n   = A-f n d                        # New Tab
+ key c   = A-f n f                        # Clone Tab
+
+# ----------------------------------------------------------------
+#  Keymap for Explorer
+keymap KeymapMDIE : Global
+ key C-Comma     = F3                     # 前のタブ
+ key C-FullStop  = F4                     # 次のタブ
+ Key C-d         = S-Delete               # 削除（ゴミ箱不要）
+ key C-r         = F5                     # reload
+ key C-k         = Esc                    # 操作ミスで削除してしまわないように
+ key C-BackSlash = Esc                    # 間違えて押すとえらいことになるからキライ
+ key C-A-h       = &ShellExecute("open", "C:\\users\\999000_102192\\bin\\mdie\\MDIE.exe", "\"C:\\users\\999000_102192\"", "\"C:\\users\\999000_102192\"", ShowNormal) # ホームディレクトリを開く
+ key C-A-c       = &ShellExecute("open", "C:\\users\\999000_102192\\bin\\mdie\\MDIE.exe", "\"C:\\users\\999000_102192\\work\"", "\"C:\\users\\999000_102192\\work\"", ShowNormal) # Workディレクトリを開く
+ key C-x = &Prefix(MDIEC-X)               # 2ストロークC-X
+ key C-c = &Prefix(MDIEC-C)               # 2ストロークC-C
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window MDIE /MDIE\.exe/ : KeymapMDIE # MDIE

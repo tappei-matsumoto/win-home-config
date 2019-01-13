@@ -1,0 +1,25 @@
+# ----------------------------------------------------------------
+#  keymap for Microsoft SQL Server Management Studio Express
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 SQLSMSE-C : GlobalC-C
+ key C-r = F5
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 SQLSMSE-X : GlobalC-X
+ key n   = LAlt N                # 新しいクエリ
+ key k   = LAlt F C              # 閉じる
+
+# ----------------------------------------------------------------
+#  Keymap for VSS
+keymap KeymapSQLSMSE : Global
+ key C-FullStop   = C-F6         # 次のブックマーク
+ key C-Comma      = C-S-F6       # 前のブックマーク
+ key C-x = &Prefix(SQLSMSE-X)
+ key C-c = &Prefix(SQLSMSE-C)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window SQLSMSE /ssmsee\.exe/ : KeymapSQLSMSE

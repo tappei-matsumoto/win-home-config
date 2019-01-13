@@ -1,0 +1,25 @@
+# ----------------------------------------------------------------
+#  keymap for VSS
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 VSS-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 VSS-X : GlobalC-X
+ key C-i = C-i                    # チェックイン
+ key C-o = C-o                    # チェックアウト
+ key C-h = C-h                    # 履歴
+
+# ----------------------------------------------------------------
+#  Keymap for VSS
+keymap KeymapVSS : Global
+ key p   = S-F7
+ key n   = F7
+ key C-x = &Prefix(VSS-X)
+ key C-c = &Prefix(VSS-C)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window VSS /SSEXP\.EXE/ : KeymapVSS # Visual Source Safe

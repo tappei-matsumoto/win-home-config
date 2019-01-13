@@ -1,0 +1,24 @@
+# ----------------------------------------------------------------
+#  Keymap for MS-WORD
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 WordC-C : MS-OfficeC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 WordC-X : MS-OfficeC-X
+ key _1  = LAlt v t Return        # 標準ツールバー
+ key _2  = LAlt v t Down Return   # 書式設定
+
+# ----------------------------------------------------------------
+#  Keymap for MS-WORD
+keymap KeymapWord : KeymapMS-Office
+ key C-s = C-f                    # 検索
+ key C-c = &Prefix(WordC-C)
+ key C-x = &Prefix(WordC-X)
+ key C-S-Slash = &DescribeBindings
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Word /WORD\.EXE/ : KeymapWord # MS Word

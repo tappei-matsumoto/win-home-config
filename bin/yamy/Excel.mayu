@@ -1,0 +1,83 @@
+# ----------------------------------------------------------------
+#  Keymap for Excel
+# ----------------------------------------------------------------
+#  Dependence
+#   - Marking         : defined Global.mayu
+#   - MS-OfficeC-C    : defined MSOffice.mayu
+#   - MS-OfficeC-X    : defined MSOffice.mayu
+#   - KeymapMS-Office : defined MSOffice.mayu
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 ExcelC-C : MS-OfficeC-C
+ key C-c = LAlt e a a             # すべてクリア
+ key C-y = LAlt e s               # 形式を選択して貼り付け
+ key C-f = C-_1                   # セルの書式設定
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 ExcelC-X : MS-OfficeC-X
+ key _1  = LAlt v t &Variable(0,0)  &Repeat((Down),0)  Return  # 標準ツールバー
+ key _2  = LAlt v t &Variable(0,1)  &Repeat((Down),1)  Return  # 書式設定ツールバー
+ key _3  = LAlt v t &Variable(0,14) &Repeat((Down),14) Return  # 図形描写ツールバー
+ key n   = A-i w                  # 新しいシート
+ key k   = LAlt e l               # シートの削除
+ key C-m = LAlt e m               # シートの移動
+ key C-y = LAlt e m A-c A-b       # シートのコピー
+ key C-n = LAlt o h r             # シート名の変更
+ key C-z = LAlt v z               # ズーム
+ key C-c = LAlt f x               # 終了
+ key C-S-Semicolon = LAlt d g s   # 展開
+ key C-HyphenMinus = LAlt d g h   # 折りたたみ
+
+# ----------------------------------------------------------------
+#  Mulitple Stroke Marking
+keymap2 Excel-Marking : Marking
+ key C-c = &Keymap(ExcelC-C)
+ key C-x = &Keymap(ExcelC-X)
+
+# ----------------------------------------------------------------
+#  Multiple Stroke Help
+keymap2 Excel-Help : Global
+ key _1 = &HelpMessage("シートの操作", \
+     "C-X N   : 新しいシート\n" \
+     "C-X K   : シートの削除\n" \
+     "C-X C-M : シートの移動\n" \
+     "C-X C-Y : シートのコピー\n" \
+     "C-X C-N : シート名の変更\n" \
+     )
+ key _2 = &HelpMessage("セルの操作", \
+     "C-t     : リストから選択\n" \
+     "C-C C-C : すべてクリア\n" \
+     "C-C C-Y : 形式を選択して貼り付け\n" \
+     "C-C C-F : セルの書式設定\n" \
+     )
+ key _3 = &HelpMessage("ツールバー", \
+     "C-X 1   : 標準ツールバー\n" \
+     "C-X 2   : 書式設定ツールバー\n" \
+     "C-X 3   : 図形描写ツールバー\n" \
+     )
+ key _4 = &HelpMessage("その他", \
+     "C-C C-V : 印刷プレビュー\n" \
+     "C-C C-P : 印刷ダイアログ" \
+     )
+
+# ----------------------------------------------------------------
+#  Keymap for Excel
+keymap KeymapExcel : KeymapMS-Office
+ key C-s   = C-f                    # 検索
+ key C-t   = Applications k         # リストから選択
+ key C-S-k = C-w                    # ブックを閉じる
+ key C-c   = &Prefix(ExcelC-C)
+ key C-x   = &Prefix(ExcelC-X)
+ key C-Space = &Prefix(Excel-Marking)
+ key C-S-Slash = &HelpMessage("KeyMap", \
+     "1 : シートの操作\n" \
+     "2 : セルの操作\n" \
+     "3 : ツールバー\n" \
+     "4 : その他\n" \
+     ) &Prefix(Excel-Help)
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window Excel /EXCEL\.EXE/ : KeymapExcel # MS Excel

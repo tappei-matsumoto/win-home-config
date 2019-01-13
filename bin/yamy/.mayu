@@ -1,0 +1,107 @@
+# ----------------------------------------------------------------
+#  .mayu
+# ----------------------------------------------------------------
+#
+# Keymap Guide
+#
+# [General]
+# C-p : up
+# C-n : down
+# C-b : left
+# C-f : right
+# M-f : next word
+# M-b : previous word
+# C-a : home
+# C-e : end
+# C-v : page down
+# M-v : page up
+# C-l : recentr
+# C-, : next buffer (tab pane)
+# C-. : previous buffer (tab pane)
+# C-i : tab
+# C-m : enter
+# C-w : cut
+# M-w : copy
+# C-y : paste
+# C-k : kill line
+# C-d : delete
+# C-h : backspace
+# M-d : kill word
+# M-h : kill previous word
+# C-\ : undo
+# C-_ : redo
+# C-s : search
+# C-g : esc
+# C-t : dabbrev, completion
+# C-? : show help
+# C-@ : Mark Set
+# S-Space : input toggle (Kanji)
+# C-x [   : page top
+# C-x ]   : page bottom
+# C-x n   : new buffer (tab pane)
+# C-x k   : close buffer (tab pane)
+# C-x C-s : save
+# C-x C-w : save as
+# C-x C-f : file open
+# C-x C-c : close
+# C-c C-p : print
+# C-c C-v : print preview
+# C-S-w        : window mode
+# C-S-[pnfbae] : mouse move
+#
+# [Develop]
+# C-c C-c : Compile
+# C-c C-r : Run
+# C-c C-d : Debug
+#
+# [Valuationing]
+# C-j : edit
+# C-o : application key
+
+# ----------------------------------------------------------------
+#  Keyboard Setting
+include "109.mayu"                     # 109keyboard
+include "Dvorak.mayu"                  # dvorak on 109
+
+# ----------------------------------------------------------------
+#  Keysequence Definition
+keyseq $WindowClose     = A-F4    # close window
+keyseq $PreviousWindow  = A-S-Tab # previous window
+keyseq $NextWindow      = A-Tab   # next window
+keyseq $EmacsEdit/kill-line = \
+       &EmacsEditKillLineFunc S-End C-X &Sync \
+       &EmacsEditKillLinePred((Delete), (Return Left))
+
+# ----------------------------------------------------------------
+#  Load Modules
+include "Global.mayu"                  # Global Keymap
+include "AcrobatReader.mayu"           # Adobe Acrobat Reader Keymap
+include "Explorer.mayu"                # Explorer Keymap
+include "MSOffice.mayu"                # MS Office Keymap
+include "Access.mayu"                  # MS Access Keymap
+include "excel.mayu"                   # MS Excel Keymap
+include "Word.mayu"                    # MS Word Keymap
+include "Traypse.mayu"                 # Traypse Keymap
+include "VB.mayu"                      # Visual Basic Keymap
+include "VSS.mayu"                     # Visual Source Safe Keymap
+include "MozillaFirefox.mayu"          # MozillaFirebird Keymap
+include "xyzzy.mayu"                   # xyzzy Keymap
+include "ObjectBrowser.mayu"           # ObjectBrowser Keymap
+include "Eclips.mayu"                  # Eclips Keymap
+include "InternetExplorer.mayu"        # Internet Exproler Keymap
+include "NetBeans.mayu"                # NetBeans Keymap
+include "OSqlEdit.mayu"                # OSqlEdit Keymap
+include "OSqlGrid.mayu"                # OSqlGrid Keymap
+include "SQLQA.mayu"                   # SQL Query Analyzer Keymap
+include "MDIE.mayu"                    # MDIE Keymap
+include "SQLSMSE.mayu"                 # Microsoft SQL Server Management Studio Express Keymap
+include "VisualStudio.mayu"            # Microsoft Visual Studio 2005/2008 Keymap
+include "FreeMind.mayu"                # FreMind Keymap
+include "console2.mayu"                # Console2 Keymap
+include "PPCW.mayu"                    # PPCW Keymap
+include "tablacus.mayu"                # Tablacus Keymap
+include "vscode.mayu"                  # VSCode Keymap
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window DialogBox /:#32770:/ : Global # Dialog  

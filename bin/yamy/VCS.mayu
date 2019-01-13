@@ -1,0 +1,42 @@
+# ----------------------------------------------------------------
+#  keymap for Visual C# 2005 Express Edition
+
+# ----------------------------------------------------------------
+#  Depends
+
+# ----------------------------------------------------------------
+#  Visual C# 2strok C-C
+keymap2 VCSC-C : GlobalC-C
+ key C-c = F6    # コンパイル
+ key C-r = C-F5  # 実行
+ key C-d = F5    # デバッグ実行
+
+# ----------------------------------------------------------------
+#  Visual C# 2strok C-X
+keymap2 VCSC-X : GlobalC-X
+ key C-x          = C-b n          # 次のマーキング
+ key C-Comma      = C-b p          # 前のマーキング
+ key C-FullStop   = C-b n          # 次のマーキング
+ key b            = F9             # ブレークポイントトグル
+ key k            = C-F4           # MDI-Windowの削除
+
+# ----------------------------------------------------------------
+#  Visual C#
+keymap keymapVCS : Global
+ key C-t           = C-Space            # 補完
+ key C-Comma       = C-S-Tab            # 前のタブ
+ key C-FullStop    = C-Tab              # 次のタブ
+ Key A-Comma       = A-S-F6             # 前のウィンドウ
+ key A-FullStop    = A-F6               # 次のウィンドウ
+ key C-Atmark      = C-b t              # マーキング
+ key C-x           = &Prefix(VCSC-X)
+ key C-c           = &Prefix(VCSC-C)
+ key C-S-Slash     = &HelpMessage("KeyMap", \
+     " 1 : ウィンドウ \n" \
+     " 2 : マーキング・カーソル \n" \
+     " 3 : 実行・デバッグ" \
+     )
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window VCS /VCSExpress.exe/ : keymapVCS
