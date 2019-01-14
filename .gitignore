@@ -1,1 +1,5 @@
-bin/git
+*
+!/bin
+!/bin/yamy
+!/bin/SetupScript
+!README.md
