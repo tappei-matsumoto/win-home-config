@@ -27,8 +27,9 @@
 - [SMPlayer](https://www.smplayer.info/)
 - [Tablacus Explorer](https://tablacus.github.io/explorer.html)
 - [vscode](https://code.visualstudio.com/)
-- [yamy](https://ja.osdn.net/projects/yamy/)
+- [WinMerge](http://winmerge.org/)
 - [xyzzy](https://github.com/xyzzy-022/xyzzy)
+- [yamy](https://ja.osdn.net/projects/yamy/)
 - [カハマルカの瞳](http://www.paw.hi-ho.ne.jp/milbesos/rss/rss_ojos.html)
 
 # ディレクトリ構成
@@ -63,6 +64,9 @@
 ## SMPlayer
 1. SMPlayer（Windows用ポータブル版）をダウンロード https://www.smplayer.info/ja/download-smplayer-portable
 1. 解凍して %USERPROFILE%/bin/SMPlayer にコピー
+## WinMerge
+1. WinMerge（ZIP）をダウンロード winmerge.org/downloads/
+1. 解凍して %USERPROFILE%/WinMerge/yamy にコピー
 ## yamy
 1. yamyをダウンロード
 https://ja.osdn.net/projects/yamy/
