@@ -13,7 +13,6 @@ function main() {
         shortcut.create();
 
         // 作成したショートカットをコンソールに出力する
-        Console.println("ショートカットを作成しました");
         Console.println(shortcut);
 
     } catch (e) {

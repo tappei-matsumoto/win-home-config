@@ -7,16 +7,19 @@
 - 「ファイル名を指定して実行」がランチャー
 
 # 使用しているソフトウェア
-- git for windows portable
-- firefox
-- yamy
+- [git for windows portable](https://git-scm.com/download/win)
+- [firefox](https://www.mozilla.org/firefox/)
+- [yamy](https://ja.osdn.net/projects/yamy/)
 
 # ディレクトリ構成
 - bin
+- SetupScript
+
+# スタートアップ
 
 # 最初にやること
 1. git for windows portableをダウンロード
-1. gitを%HOMEDRIVE%%HOMEPATH%/bin/gitに インストール
+1. gitを解凍して%USERPROFILE%/bin/gitに 配置（フォルダは作る）
 1. 適当なフォルダにclone
 1. ホームディレクトリにコピー
 1. 必要なソフトウェアのセットアップ
