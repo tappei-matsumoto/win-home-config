@@ -34,6 +34,6 @@ https://ja.osdn.net/projects/yamy/
 1. 解凍して bin/yamy にコピー
 
 # Todo
-1. スタートアップへの登録
+1. pathへの追加setxだと1024文字縛りがあるのでwshを作る
 1. ファイルエクスプローラー設定の自動化
 
