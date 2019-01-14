@@ -22,6 +22,7 @@
 - [firefox](https://www.mozilla.org/firefox/)
 - [git for windows](https://git-scm.com/download/win)
 - [ID Manager](http://www.woodensoldier.info/soft/idm.htm)
+- [Lhaplus](http://www7a.biglobe.ne.jp/~schezo/)
 - [MPC-HC](https://mpc-hc.org/)
 - [SMPlayer](https://www.smplayer.info/)
 - [Tablacus Explorer](https://tablacus.github.io/explorer.html)
@@ -41,6 +42,8 @@
 
 # ソフトウェアのセットアップ方法
 ## Change Key
+1. Change Keyをダウンロード http://satoshi3.sakura.ne.jp/f_soft/dw_win.htm
+1. 管理者で起動してcaps lockキーを左ctrlキーに変更（入れ替えではないよ）
 ## ConEmu
 1. ConEmu Portable版をダウンロード https://www.fosshub.com/ConEmu.html
 1. 解凍して %USERPROFILE%/bin/ConEmu にコピー
@@ -51,6 +54,9 @@
 1. ID Manager（インストーラーなし）をダウンロード http://www.woodensoldier.info/soft/idm.htm
 1. 解凍して %USERPROFILE%/bin/idm にコピー
 1. privateから IDM.ini を上書きコピー
+## Lhaplus
+1. Lhaplus（ZIPアーカイブ）をダウンロード http://www7a.biglobe.ne.jp/~schezo/
+1. 解凍して %USERPROFILE%/bin/lhaplus にコピー
 ## MPC-HC
 1. MPC-HC(ZIP)をダウンロード https://mpc-hc.org/downloads/
 1. 解凍して %USERPROFILE%/bin/mpc にコピー
@@ -64,6 +70,7 @@ https://ja.osdn.net/projects/yamy/
 
 # Todo
 1. binフォルダのpathへの追加。setxだと1024文字縛りがあるのでwshを作る
+1. gitへのpath追加
 1. bitsadmin.exeによるダウンロード＆インストールの自動化
 1. ファイルエクスプローラー設定の自動化
 
