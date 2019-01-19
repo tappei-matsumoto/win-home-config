@@ -15,6 +15,9 @@ cmd /c mksc "%BIN_FOLDER%\idm.lnk" "%BIN_FOLDER%\idm\IDM.exe"
 echo MPC-HCのショートカットを作成する
 cmd /c mksc "%BIN_FOLDER%\mpc.lnk" "%BIN_FOLDER%\mpc\mpc-hc64.exe"
 
+echo RealSyncのショートカットを作成する
+cmd /c mksc "%BIN_FOLDER%\rsync.lnk" "%BIN_FOLDER%\rsync\RealSync.exe"
+
 echo SMPlayerのショートカットを作成する
 cmd /c mksc "%BIN_FOLDER%\smp.lnk" "%BIN_FOLDER%\smplayer\smplayer.exe"
 

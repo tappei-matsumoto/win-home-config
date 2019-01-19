@@ -1,11 +1,11 @@
  # はじめに
-このリポジトリはWindowsのホームディレクトリを管理します。
+このリポジトリはWindowsホームディレクトリの管理を目的とします。
 使用しているソフトウェアの設定のバックアップやPC移行時の環境再構築を容易にすることが目的です。
 
 # 特徴
 - 何でもEmacsキーバインド
 - 「ファイル名を指定して実行」がランチャー
-- 可能な限りPortable版のソフトウェアを使用して設定ファイルを隔離
+- 可能な限りPortable版のソフトウェアを使用して設定ファイルを隔離（このリポジトリで管理）
 - 公開したくないファイルはprivateフォルダで管理
 
 # セットアップ方法
@@ -24,6 +24,7 @@
 - [ID Manager](http://www.woodensoldier.info/soft/idm.htm)
 - [Lhaplus](http://www7a.biglobe.ne.jp/~schezo/)
 - [MPC-HC](https://mpc-hc.org/)
+- [Real Sync](http://www.takenet.or.jp/~ryuuji/realsync/)
 - [SMPlayer](https://www.smplayer.info/)
 - [Tablacus Explorer](https://tablacus.github.io/explorer.html)
 - [vscode](https://code.visualstudio.com/)
@@ -59,7 +60,7 @@
 1. Lhaplus（ZIPアーカイブ）をダウンロード http://www7a.biglobe.ne.jp/~schezo/
 1. 解凍して %USERPROFILE%/bin/lhaplus にコピー
 ## MPC-HC
-1. MPC-HC(ZIP)をダウンロード https://mpc-hc.org/downloads/
+1. MPC-HC（ZIP）をダウンロード https://mpc-hc.org/downloads/
 1. 解凍して %USERPROFILE%/bin/mpc にコピー
 ## SMPlayer
 1. SMPlayer（Windows用ポータブル版）をダウンロード https://www.smplayer.info/ja/download-smplayer-portable
