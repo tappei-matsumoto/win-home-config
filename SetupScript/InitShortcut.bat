@@ -21,6 +21,9 @@ cmd /c mksc "%BIN_FOLDER%\rsync.lnk" "%BIN_FOLDER%\rsync\RealSync.exe"
 echo SMPlayerのショートカットを作成する
 cmd /c mksc "%BIN_FOLDER%\smp.lnk" "%BIN_FOLDER%\smplayer\smplayer.exe"
 
+echo Tablacus Explorerのショートカットを作成する
+cmd /c mksc "%BIN_FOLDER%\te.lnk" "%BIN_FOLDER%\te\TE64.exe"
+
 echo SnippingToolのショートカットを作成する
 cmd /c mksc "%BIN_FOLDER%\snip.lnk" "%SystemRoot%\system32\SnippingTool.exe"
 
