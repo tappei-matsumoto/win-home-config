@@ -1,0 +1,20 @@
+# ----------------------------------------------------------------
+#  keymap for WinMerge
+
+# ----------------------------------------------------------------
+#  2Stroke C-C
+keymap2 VSS-C : GlobalC-C
+
+# ----------------------------------------------------------------
+#  2Stroke C-X
+keymap2 VSS-X : GlobalC-X
+
+# ----------------------------------------------------------------
+#  Keymap for VSS
+keymap KeymapWinMerge : Global
+ key A-p = A-up
+ key A-n = A-down
+
+# ----------------------------------------------------------------
+#  Keymap Expectations
+window WinMerge /WinMergeU\.exe/ : KeymapWinMerge # WinMerge
