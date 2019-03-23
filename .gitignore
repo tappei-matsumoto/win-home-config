@@ -1,5 +1,5 @@
-*
-!/bin
-!/bin/yamy
-!/bin/SetupScript
-!README.md
+/*
+!/README.md
+!/bin/tools/
+!/bin/yamy/
+!/SetupScript/
