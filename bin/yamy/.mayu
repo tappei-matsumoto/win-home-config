@@ -75,7 +75,7 @@ keyseq $EmacsEdit/kill-line = \
 # ----------------------------------------------------------------
 #  Load Modules
 include "Global.mayu"                  # Global Keymap
-include "AcrobatReader.mayu"           # Adobe Acrobat Reader Keymap
+#include "AcrobatReader.mayu"           # Adobe Acrobat Reader Keymap
 include "Explorer.mayu"                # Explorer Keymap
 include "MSOffice.mayu"                # MS Office Keymap
 include "Access.mayu"                  # MS Access Keymap
