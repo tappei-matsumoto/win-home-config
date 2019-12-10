@@ -68,6 +68,7 @@ keymap KeymapExcel : KeymapMS-Office
  key C-s   = C-f                    # 検索
  key C-t   = Applications k         # リストから選択
  key C-S-k = C-w                    # ブックを閉じる
+ Key M-g   = C-g                    # 指定せるジャンプ
  key C-c   = &Prefix(ExcelC-C)
  key C-x   = &Prefix(ExcelC-X)
  key C-Space = &Prefix(Excel-Marking)
