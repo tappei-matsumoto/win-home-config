@@ -78,4 +78,4 @@ https://ja.osdn.net/projects/yamy/
 1. gitへのpath追加
 1. bitsadmin.exeによるダウンロード＆インストールの自動化
 1. ファイルエクスプローラー設定の自動化
-
+1. windowsのpackage managerを調べてみる
