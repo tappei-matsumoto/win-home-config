@@ -30,8 +30,8 @@ keymap KeymapMozillaFirefox : Global
  key C-t        = Esc             # 誤打しやすい....
  key C-k        = Esc             # 誤打防止
  key C-s        = F3              # 次の検索結果
- key C-Comma    = C-S-Tab         # 前のタブ
- key C-FullStop = C-Tab           # 次のタブ
+ key C-Comma    = C-PageUp        # 前のタブ
+ key C-FullStop = C-PageDown      # 次のタブ
  key C-x        = &Prefix(MozillaFirefoxC-X)
  key C-c        = &Prefix(MozillaFirefoxC-C)
  key C-S-Slash  = &HelpMessage("キーマップ", \
