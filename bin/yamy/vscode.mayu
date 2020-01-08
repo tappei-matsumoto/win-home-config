@@ -18,6 +18,7 @@ keymap2 VScodeC-C : GlobalC-C
 # ----------------------------------------------------------------
 #  2 Stroke Keymap (C-X)
 keymap2 VSCodeC-X : GlobalC-X
+ key k   = C-F4                      # Close Editor
 
 # ----------------------------------------------------------------
 #  2 Stroke Keymap (Help)
